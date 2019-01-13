@@ -71,6 +71,11 @@ namespace Paint
             cboSize.SelectedIndex = 0;
         }
 
+		/// <summary>
+		/// Loads panel to initiate paint or display dimention provided from the code
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void MsPaint_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
