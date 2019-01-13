@@ -879,9 +879,13 @@ namespace Paint
         {
             this.Close();
         }
-        
 
-        private void DrawRectangle(int width, int height)
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void DrawRectangle(int width, int height)
         {            
             Pen myPen = new Pen(mainColor);
             g.DrawRectangle(myPen, mouseX - width / 2, mouseY - height / 2, width, height);
