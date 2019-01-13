@@ -48,6 +48,10 @@ namespace Paint
             pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
             addPenSizes();
         }
+
+		/**
+		 * Redraws shape to corresponding mouse pointer
+		 */
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -58,12 +62,19 @@ namespace Paint
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+		/**
+		 * Declare pen Size
+		 */
         private void addPenSizes() {
             cboSize.Items.Clear();
             cboSize.Items.AddRange(new String[] {"1", "2", "4", "6", "8"});
             cboSize.SelectedIndex = 0;
         }
 
+		/**
+		 * Declare drawing size
+		 */
         private void addDrawingSizes()
         {
             cboSize.Items.Clear();
@@ -84,6 +95,9 @@ namespace Paint
             panelPaint.Cursor = new Cursor(Properties.Resources.pen.GetHicon());
         }
 
+		/**
+		 * Selects Color
+		 */
         private void btnChooseColor_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() != DialogResult.Cancel) {
