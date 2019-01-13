@@ -375,8 +375,12 @@ namespace Paint
                     
             }
         }
-        private void RunCommand(String oneLineCommand) {
-            
+
+		/**
+		 * The code are executed when the button is clicked
+		 */
+        private void RunCommand(String oneLineCommand)
+		{
             Boolean hasPlus = oneLineCommand.Contains('+');
             Boolean hasEquals = oneLineCommand.Contains("=");
             if (hasEquals) {
@@ -525,6 +529,11 @@ namespace Paint
                 
         }
 
+		/// <summary>
+		/// Returns the size of structure
+		/// </summary>
+		/// <param name="lineCommand"></param>
+		/// <returns></returns>
 		private int GetSize(string lineCommand)
 		{
 			int value = 0;
@@ -552,10 +561,13 @@ namespace Paint
 			}
 			catch (Exception e)
 			{
-				return 0;
+				return value;
 			}
         }
 
+		/**
+		 *  Initiate shapes and figure to build shapes
+		 */
         private void sendDrawCommand(string lineOfCommand)
         {
             String[] shapes = { "circle", "rectangle", "triangle", "polygon" };
@@ -724,6 +736,10 @@ namespace Paint
             }             
         }
 
+		/// <summary>
+		/// initiates loop 
+		/// </summary>
+		/// <returns></returns>
         private int GetEndifEndLineNumber()
         {
             int numberOfLines = txtCommand.Lines.Length;
