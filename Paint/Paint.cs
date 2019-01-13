@@ -520,29 +520,35 @@ namespace Paint
                 
         }
 
-        private int GetSize(string lineCommand)
-        {
-            int value = 0;
-            if (lineCommand.ToLower().Contains("radius")) {
-                int pos = (lineCommand.IndexOf("radius") + 6);
-                int size = lineCommand.Length;
-                String tempLine = lineCommand.Substring(pos, (size-pos));
-                tempLine = tempLine.Trim();
-                String newTempLine = tempLine.Substring(1, (tempLine.Length - 1));
-                newTempLine = newTempLine.Trim();
-                value = int.Parse(newTempLine);
-                
-            }else if(lineCommand.ToLower().Contains("size"))
-            {
-                int pos = (lineCommand.IndexOf("size") + 4);
-                int size = lineCommand.Length;
-                String tempLine = lineCommand.Substring(pos, (size - pos));
-                tempLine = tempLine.Trim();
-                String newTempLine = tempLine.Substring(1, (tempLine.Length - 1));
-                newTempLine = newTempLine.Trim();
-                value = int.Parse(newTempLine);
-            }
-            return value;
+		private int GetSize(string lineCommand)
+		{
+			int value = 0;
+			try {
+				if (lineCommand.ToLower().Contains("radius")) {
+					int pos = (lineCommand.IndexOf("radius") + 6);
+					int size = lineCommand.Length;
+					String tempLine = lineCommand.Substring(pos, (size - pos));
+					tempLine = tempLine.Trim();
+					String newTempLine = tempLine.Substring(1, (tempLine.Length - 1));
+					newTempLine = newTempLine.Trim();
+					value = int.Parse(newTempLine);
+
+				} else if (lineCommand.ToLower().Contains("size"))
+				{
+					int pos = (lineCommand.IndexOf("size") + 4);
+					int size = lineCommand.Length;
+					String tempLine = lineCommand.Substring(pos, (size - pos));
+					tempLine = tempLine.Trim();
+					String newTempLine = tempLine.Substring(1, (tempLine.Length - 1));
+					newTempLine = newTempLine.Trim();
+					value = int.Parse(newTempLine);
+				}
+				return value;
+			}
+			catch (Exception e)
+			{
+				return 0;
+			}
         }
 
         private void sendDrawCommand(string lineOfCommand)
