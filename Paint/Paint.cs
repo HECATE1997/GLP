@@ -346,6 +346,10 @@ namespace Paint
 
 
         }
+
+		/**
+		 * loads command to draw and move pointer
+		 */
         private void loadCommand()
         {
             int numberOfLines = txtCommand.Lines.Length;
