@@ -758,6 +758,10 @@ namespace Paint
             return lineNum;
         }
 
+		/// <summary>
+		/// initiates if there is an if clause
+		/// </summary>
+		/// <returns></returns>
         private int GetIfStartLineNumber()
         {
             int numberOfLines = txtCommand.Lines.Length;
@@ -784,6 +788,10 @@ namespace Paint
             return lineNum;
         }
 
+		/// <summary>
+		/// Ends loops
+		/// </summary>
+		/// <returns></returns>
         private int GetLoopEndLineNumber()
         {
             int numberOfLines = txtCommand.Lines.Length;
@@ -802,6 +810,10 @@ namespace Paint
             return lineNum;
         }
 
+		/// <summary>
+		/// Initiates loops
+		/// </summary>
+		/// <returns></returns>
         private int GetLoopStartLineNumber()
         {
             int numberOfLines = txtCommand.Lines.Length;
@@ -829,6 +841,9 @@ namespace Paint
 
         }
 
+		/**
+		 * Draw Polygon
+		 */
         private void DrawPolygon(int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8)
         {
             Pen myPen = new Pen(mainColor);
@@ -851,6 +866,10 @@ namespace Paint
 
             g.DrawPolygon(myPen, pnt);
         }
+
+		/**
+		 * Draws a polygon 
+		 */
         private void DrawPolygon(int v1, int v2, int v3, int v4, int v5,int v6, int v7, int v8, int v9, int v10)
         {
             Pen myPen = new Pen(mainColor);
@@ -876,6 +895,9 @@ namespace Paint
             g.DrawPolygon(myPen, pnt);            
         }
 
+		/**
+		 * Draws Triangle
+		 */
         private void DrawTriangle(int rBase, int adj, int hyp)
         {
             Pen myPen = new Pen(mainColor);
