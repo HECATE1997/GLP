@@ -323,12 +323,18 @@ namespace Paint
             }
         }
 
-        private void btnClearAll_Click(object sender, EventArgs e)
+		/**
+		 * Cleares paint panel
+		 */
+		private void btnClearAll_Click(object sender, EventArgs e)
         {
             txtCommand.Text = "";
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+		/**
+		 * Saves program
+		 */
+		private void btnSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text File | *.txt";
@@ -342,7 +348,10 @@ namespace Paint
             
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+		/**
+		 * executes codes
+		 */
+		private void btnRun_Click(object sender, EventArgs e)
         {
             hasDrawOrMoveValue = false;
             if (txtCommand.Text != null && txtCommand.Text != "") {
