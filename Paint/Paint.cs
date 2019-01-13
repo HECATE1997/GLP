@@ -107,6 +107,9 @@ namespace Paint
             pen = new Pen(mainColor, size);
         }
 		
+		/**
+		 * changes mouse cursor to pen
+		 */
         private void btnPen_Click(object sender, EventArgs e)
         {
             cboSize.Enabled = true;
@@ -118,6 +121,9 @@ namespace Paint
 
         }
 
+		/**
+		 * changes mouse cursor to eraser
+		 */
         private void btnEraser_Click(object sender, EventArgs e)
         {
             active = "eraser";            
@@ -128,6 +134,9 @@ namespace Paint
 
         }
 
+		/**
+		 * Draws a rectangle
+		 */
         private void btnRectangle_Click(object sender, EventArgs e)
         {
             active = "rectangle";
@@ -138,6 +147,9 @@ namespace Paint
             cboSize.Enabled = true;
         }
 
+		/**
+		 * Draws a triangle
+		 */
         private void btnTriangle_Click(object sender, EventArgs e)
         {
             active = "triangle";
@@ -148,7 +160,10 @@ namespace Paint
             cboSize.Enabled = true;
         }
 
-        private void btnCircle_Click(object sender, EventArgs e)
+		/**
+		 * Draws a circle
+		 */
+		private void btnCircle_Click(object sender, EventArgs e)
         {
             active = "circle";
             removeAllBorderFromButtons();
@@ -157,7 +172,10 @@ namespace Paint
             addDrawingSizes();
             cboSize.Enabled = true;
         }
-        private void btnPolygon_click(object sender, EventArgs e)
+		/**
+		 * Draws a polygon
+		 */
+		private void btnPolygon_click(object sender, EventArgs e)
         {
             active = "polygon";
             removeAllBorderFromButtons();
@@ -167,7 +185,10 @@ namespace Paint
             cboSize.Enabled = true;
         }
 
-        private void setAllBorderColorForButtons()
+		/**
+		 * Sets Border Color for buttons
+		 */
+		private void setAllBorderColorForButtons()
         {
             btnPen.FlatAppearance.BorderColor = btnBorderColor;
             btnEraser.FlatAppearance.BorderColor = btnBorderColor;
@@ -177,7 +198,10 @@ namespace Paint
             btnPolygon.FlatAppearance.BorderColor = btnBorderColor;
         }
 
-        private void removeAllBorderFromButtons()
+		/**
+		 * Remove boarder from buttons
+		 */
+		private void removeAllBorderFromButtons()
         {
             btnPen.FlatAppearance.BorderSize = 0;
             btnEraser.FlatAppearance.BorderSize = 0;
@@ -186,14 +210,21 @@ namespace Paint
             btnCircle.FlatAppearance.BorderSize = 0;
             btnPolygon.FlatAppearance.BorderSize = 0;
         }
-        private void panelPaint_MouseDown(object sender, MouseEventArgs e)
+
+		/**
+		 * Painting on paint panel
+		 */
+		private void panelPaint_MouseDown(object sender, MouseEventArgs e)
         {
             moving = true;
             x = e.X;
             y = e.Y;
         }
 
-        private void panelPaint_MouseUp(object sender, MouseEventArgs e)
+		/**
+		 * Doesnot paint on panel when mouse is not clicked
+		 */
+		private void panelPaint_MouseUp(object sender, MouseEventArgs e)
         {
             moving = false;
             x = -1;
