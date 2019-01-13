@@ -106,7 +106,7 @@ namespace Paint
             }
             pen = new Pen(mainColor, size);
         }
-
+		
         private void btnPen_Click(object sender, EventArgs e)
         {
             cboSize.Enabled = true;
